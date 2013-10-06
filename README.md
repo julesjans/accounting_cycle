@@ -6,7 +6,7 @@ This gem is not distributed built. Either clone & build, or use bundler:
 
 ```ruby	
 
-gem 'simple_apns', :git => 'https://github.com/julesjans/simple_apns.git'
+gem 'accounting_cycle', :git => 'https://github.com/julesjans/accounting_cycle.git'
 ```
 
 ###Usage
