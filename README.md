@@ -1,6 +1,6 @@
 A gem to calculate financial periods in accounting years. Quite useful for VAT.
 
-###Installation
+### Installation
 
 This gem is not distributed built. Either clone & build, or use bundler:
 
@@ -9,9 +9,9 @@ This gem is not distributed built. Either clone & build, or use bundler:
 gem 'accounting_cycle', :git => 'https://github.com/julesjans/accounting_cycle.git'
 ```
 
-###Usage
+### Usage
 
-####Configuring an accounting cycle
+#### Configuring an accounting cycle
 
 Configure a VAT year cycle. Periods default to quarterly, begining 1 Jan, but can be adjusted (e.g. 5 April - 4 April). Can only be set once, or will raise error (AccountingCycle::CycleAlreadySet): 
 
@@ -95,7 +95,7 @@ two_periods_later = period.next_period(2)
 two_periods_later == period.next_period.next_period		# => true
 ```
 
-####Attributes of years & periods
+#### Attributes of years & periods
 
 Years:
 
@@ -121,7 +121,7 @@ puts period.start.class	# => Date
 puts period.finish		# => "2011-07-04"
 ```
 
-####Comparing dates & cycles
+#### Comparing dates & cycles
 
 Compare periods as to whether they are same, or how many periods there are between them:
 
@@ -180,20 +180,3 @@ AccountingCycle::Vat::Year.same_periods?(date_one, date_three)			# => false
 AccountingCycle::Vat::Year.check_periods!(date_one, date_three)			# => AccountingCycle::PeriodError
 AccountingCycle::Vat::Year.count_periods_between(date_one, date_four) 	# => 5
 ```
-
-####But what is the point?
-
-Two main uses:
-
-1. A neat way of organising dates for accounts reporting.
-
-2. Controlling the possibility of making edits to records that will affect prior VAT return payments.
-
-
-####Yet to come...
-
-1. Include dates for VAT return submission.
-
-1. Include support for HMRC annual accounting times [http://www.hmrc.gov.uk/vat/start/schemes/annual.htm](http://www.hmrc.gov.uk/vat/start/schemes/annual.htm)
-
-1. Full documentation
